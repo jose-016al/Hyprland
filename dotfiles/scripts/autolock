@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill xautolock
+xautolock -time 10 -locker "swaylock -i ~/Images/wallpaper.png --effect-blur 10x3 --indicator --clock" -notify 30 -notifier "dunstify 'Locking screen in 30 seconds'" -killtime 5

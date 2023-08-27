@@ -1,0 +1,191 @@
+{
+    "position": "top",
+    "layer": "top",
+      "output": "HDMI-A-1",
+    "height": 14,
+    "margin-top": 8,
+    "margin-bottom": -10,
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": ["custom/launcher", "custom/playerctl", "custom/playerlabel"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": [ "clock","pulseaudio","network","tray"],
+    // Modules configuration
+  "clock": {
+    "format": "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%H:%M}",
+    "format-alt": "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%A %d de %B de %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "on-scroll"     : 1,
+                "on-click-right": "mode",
+                "format": {
+                          "months":     "<span color='#ffead3'><b>{}</b></span>",
+                          "days":       "<span color='#ffffff'><b>{}</b></span>",
+                          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                          "today":      "<span color='#66FBFF'><b><u>{}</u></b></span>"
+                          }
+                },
+    "actions":  {
+                "on-click-right": "mode",
+                "on-click-forward": "tz_up",
+                "on-click-backward": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+                }
+},
+	
+	"wlr/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+//			"1": "一",
+//			"2": "二",
+//			"3": "三",
+//			"4": "四",
+//			"5": "五",
+			"urgent": "",
+			"active": "",
+			"default": "",
+    "sort-by-number": true
+    },
+    },
+
+    "custom/playerctl": {
+      "format": "{icon}",
+      "return-type": "json",
+      "max-length": 36,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl play-pause",
+      "format-icons": {
+        "Playing": "<span foreground='#fff' font='14' rise='-1000'>󰏥</span>",
+        "Paused": "<span foreground='#928374' font='14' rise='-1000'>󰐌</span>"
+      },
+    },
+
+    "custom/playerlabel": {
+      "format": "<span>{}</span>",
+      "return-type": "json",
+      "max-length": 36,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#fff' font='14' rise='-1000'>󰏥</span>",
+        "Paused": "<span foreground='#928374' font='14' rise='-1000'>󰐌</span>"
+      },
+    },
+
+	"battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format":"{icon}  {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+	},
+
+  "memory": {
+    "format": "󰍛 {}%",
+    "format-alt": "󰍛 {used}/{total} GiB",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 5
+  },
+
+  "disk": {
+    "format": "󰋊 {}%",
+    "format-alt": "󰋊 {used}/{total} GiB",
+    "interval": 5,
+    "path": "/mnt/Datos"
+  },
+	
+	"network": {
+        	"format-ethernet": "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ipaddr}",
+        	"format-linked": "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ifname} (No IP)"
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 5
+	},
+
+	"backlight": {
+        // "device": "acpi_video1",
+	"format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+//	"on-scroll-up":,
+//	"on-scroll-down":,
+	},
+
+	"pulseaudio": {
+		"format": "<span foreground='#6C77BB' font='14.5' rise='-1000'>{icon}</span> {volume}%",
+        	"format-muted": "<span font='14.5' rise='-1000'>󰝟 </span>Mute",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"on-click": "bash ~/.config/scripts/volume mute",
+    "on-scroll-up": "bash ~/.config/scripts/volume up",
+    "on-scroll-down": "bash ~/.config/scripts/volume down",
+    "scroll-step": 5,
+		"on-click-right": "pavucontrol"
+  },
+  "custom/launcher": {
+    "format": "<span foreground='#00FFFF' font='20' rise='-1000'></span>",
+    "on-click": "bash $HOME/.config/rofi/powermenu/powermenu",
+//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
+    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
+//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+  },
+
+  "custom/machines": {
+    "format": "<span foreground='#ebdbb2' font='15' rise='-1000'> </span>Machines",
+    "on-click": "nemo /run/media/f3l3p1n0/machines",
+//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
+    "on-click-right": "nemo /run/media/f3l3p1n0/machines"  
+//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+  },
+
+  "custom/archivos": {
+    "format": "<span foreground='#ebdbb2' font='15' rise='-1000'> </span>ASIX",
+    "on-click": "nemo /run/media/f3l3p1n0/archivos/copia_seguridad_curso/'Ciclo Superior Ciberseguridad'",
+//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
+    "on-click-right": "nemo /run/media/f3l3p1n0/archivos/copia_seguridad_curso/'Ciclo Superior Ciberseguridad'"  
+//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+  },
+
+  "custom/wf-recorder": {
+		"format": "{}",
+		"interval": "once",
+		"exec": "echo ''",
+		"tooltip": "false",
+		"exec-if": "pgrep 'wf-recorder'",
+		"on-click": "exec ./scripts/wlrecord.sh",
+		"signal": 8
+	},
+
+  "custom/hyprpicker": {
+    "format": "󰈋",
+    "on-click": "hyprpicker -a -f hex",
+    "on-click-right": "hyprpicker -a -f rgb"
+  },
+  }
+
