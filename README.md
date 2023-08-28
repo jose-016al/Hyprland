@@ -13,7 +13,7 @@
   - [Configuracion adicional de Arch Linux](#configuracion-adicional-de-arch-linux)
 - [Hyprland](#hyprland)
   - [Instalacion de Hyprland](#instalacion-de-hyprland)
-  - [Instalacion paquetes necesarios para Qtile](#instalacion-paquetes-necesarios-para-qtile)
+  - [Instalacion paquetes necesarios para Hyprland](#instalacion-paquetes-necesarios-para-hyprland)
   - [Mi configuracion](#mi-configuracion)
 
 # Enlaces a consultar
@@ -90,7 +90,7 @@ mount --mkdir /dev/sda1 /mnt/boot
 ### Instalar paquetes esenciales
 Algunos paquetes quizas no sean esenciales pero podemos aprovechar e instalarlos ya
 ```bash
-pacstrap /mnt base linux linux-firmware networkmanager sudo grub efibootmgr nano iwd
+pacstrap /mnt base base-devel linux linux-firmware networkmanager sudo grub efibootmgr nano iwd git
 ```
 
 ### Instalacion del gestor de arranque
@@ -184,10 +184,10 @@ systemctl enable lightdm
 ## Instalacion paquetes necesarios para Hyprland
 Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesitamos (algunos de estos paquetes no son necesarios)
 ```bash
-sudo pacman -S git base-devel pulseaudio pavucontrol udisks2 udiskie ntfs-3g vlc unzip wget network-manager-applet spotify-launcher bat lsd zsh
+sudo pacman -S pulseaudio pavucontrol udisks2 udiskie ntfs-3g vlc unzip wget network-manager-applet spotify-launcher bat lsd zsh
 ```
 ```bash
-yay -S telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility zsh-syntax-highlighting zsh-autosuggestions evince whatsapp-for-linux
+yay -S wl-clip-persist swaylock-effects telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility zsh-syntax-highlighting zsh-autosuggestions evince whatsapp-for-linux
 ```
 
 ## Mi configuracion
