@@ -1,11 +1,18 @@
 #!/bin/bash
 
-# AUTOR: jose-016al
+
+                        ############################################################################################################################
+                        #                                                   SCRIPT BY F3L3P1N0                                                     #
+                        #                                                 MODIFIED BY jose-016al                                                   #
+                        ############################################################################################################################
+
+# AUTOR
 
 function autor() {
     echo ""
     echo "         #####################################################"
-    echo "         #                 SCRIPT BY jose-016al                #"
+    echo "         #                 SCRIPT BY F3L3P1N0                #"
+    echo "         #                MODIFIED BY jose-016al             #"
     echo "         #####################################################"
     echo ""
 }
@@ -149,14 +156,14 @@ function requerimientos() {
 # INSTALACION DE TODOS LOS PAQUETES
 
 function paquetes() {
-    # hyprland wl-clip-persist swaylock-effects telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility zsh-syntax-highlighting zsh-autosuggestions evince whatsapp-for-linux
+    # wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux
     printf "Instalando paquetes yay......"
-    yay -S --noconfirm hyprland kitty wl-clip-persist swaylock-effects telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility zsh-syntax-highlighting zsh-autosuggestions evince whatsapp-for-linux > /dev/null 2>&1
+    yay -S --noconfirm wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
-    # rofi sddm zsh lsd bat swayidle xautolock hyprpaper waybar polkit polkit-gnome nemo pavucontrol slurp grim swappy neofetch megatools wget unzip
+    # rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm  zsh lsd bat swayidle xautolock hyprpaper waybar nemo pavucontrol slurp grim swappy neofetch megatools wget unzip > /dev/null 2>&1
+    sudo pacman -S --noconfirm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 

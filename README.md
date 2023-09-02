@@ -13,6 +13,7 @@
   - [Configuracion adicional de Arch Linux](#configuracion-adicional-de-arch-linux)
 - [Hyprland](#hyprland)
   - [Instalacion de Hyprland](#instalacion-de-hyprland)
+  - [Instalacion y config automatica](#instalacion-y-config-automatica)
   - [Instalacion paquetes necesarios para Hyprland](#instalacion-paquetes-necesarios-para-hyprland)
   - [Mi configuracion](#mi-configuracion)
 
@@ -172,7 +173,7 @@ makepkg -si # si este comando no va necesitaremos instalar base-devel por medio 
 ```
 Instalamos Qtile y el logging manager
 ```bash
-yay -S hyprland kitty rofi brave-bin
+yay -S hyprland kitty brave-bin
 ```
 ```bash
 sudo pacman -S lightdm lightdm-gtk-greeter
@@ -181,13 +182,20 @@ sudo pacman -S lightdm lightdm-gtk-greeter
 systemctl enable lightdm
 ```
 
+## Instalacion y config automatica
+Podemos ejecutar el script "install.sh", si deseamos hacer la instalacion de todos los paquetes necesarios de forma automatica y copiar los dotfiles
+```bash
+./install.sh
+```
+Posteriormente a esto haremos un reinicio, si decidimos realizar el script ya habremos terminado
+
 ## Instalacion paquetes necesarios para Hyprland
 Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesitamos (algunos de estos paquetes no son necesarios)
 ```bash
-sudo pacman -S pulseaudio pavucontrol udisks2 udiskie ntfs-3g vlc unzip wget network-manager-applet spotify-launcher bat lsd zsh
+sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher 
 ```
 ```bash
-yay -S wl-clip-persist swaylock-effects telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility zsh-syntax-highlighting zsh-autosuggestions evince whatsapp-for-linux
+yay -S wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux
 ```
 
 ## Mi configuracion
@@ -202,3 +210,7 @@ Copiamos el directorio .config
 ```bash
 cp -r dotfiles ~/
 ```
+
+## 👤 Autor
+<p>Agradecimientos a @<a href="https://github.com/f3l3p1n0">f3l3p1n0</a> por los dotfiles iniciales. Mi trabajo se basa en sus contribuciones.</p>
+<p><a href="https://github.com/f3l3p1n0/bluehypr">BlueHypr - f3l3p1n0</a></p>
