@@ -16,7 +16,7 @@
   - [Instalacion y config automatica](#instalacion-y-config-automatica)
   - [Instalacion paquetes necesarios para Hyprland](#instalacion-paquetes-necesarios-para-hyprland)
   - [Mi configuracion](#mi-configuracion)
-  - [Creditos](#creditos)
+  - [Creditos](#👤-creditos)
 
 # Enlaces a consultar
 - **[Gnome-Look](https://www.gnome-look.org/s/Gnome/browse/)**
