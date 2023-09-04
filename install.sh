@@ -98,8 +98,8 @@ function copia() {
 
     # descarga de fuentes
     printf "Descargando fuentes.........."
-    mkdir "$1/dotfiles/fonts"
-    cd $1/dotfiles/fonts
+    mkdir "$HOME/.fonts"
+    cd $HOME/.fonts
     megadl --print-names https://mega.nz/file/GxFVSLLY#etuNc6QRrEl6wgl_ZatvomojDhkBTFPqlKS7ELk7KAM > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
@@ -134,6 +134,7 @@ function copia() {
     printf "Lighdm........................."
     sudo cp -r "$1/Lightdm/lightdm-gtk-greeter.conf" /etc/lightdm/
     sudo cp -r "$1/.screenshots/wallpaperBloqueo.jpg" /usr/share/pixmaps/
+    sudo systemctl enable lightdm
     echo -e "\e[32mOK\e[0m"
 }
 
@@ -158,12 +159,12 @@ function requerimientos() {
 function paquetes() {
     # wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux
     printf "Instalando paquetes yay......"
-    yay -S --noconfirm wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux > /dev/null 2>&1
+    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
     # rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher > /dev/null 2>&1
+    sudo pacman -S --noconfirm lightdm lightdm-gtk-greeter rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 
