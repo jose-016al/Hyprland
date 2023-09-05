@@ -105,7 +105,7 @@ function copia() {
 
     # fonts
     printf "Copiando fuentes............."
-    sudo cp -r $1/dotfiles/fonts/* "/usr/share/fonts/"
+    sudo cp -r $HOME/.fonts/* "/usr/share/fonts/"
     cd /usr/share/fonts/
     sudo unzip fonts.zip > /dev/null 2>&1
     sudo rm -rf fonts.zip  > /dev/null 2>&1
@@ -131,11 +131,11 @@ function copia() {
     echo -e "\e[32mOK\e[0m"
 
     # lightdm
-    printf "Lighdm........................."
-    sudo cp -r "$1/Lightdm/lightdm-gtk-greeter.conf" /etc/lightdm/
-    sudo cp -r "$1/.screenshots/wallpaperBloqueo.jpg" /usr/share/pixmaps/
-    sudo systemctl enable lightdm
-    echo -e "\e[32mOK\e[0m"
+    # printf "Lighdm........................."
+    # sudo cp -r "$1/Lightdm/lightdm-gtk-greeter.conf" /etc/lightdm/
+    # sudo cp -r "$1/.screenshots/wallpaperBloqueo.jpg" /usr/share/pixmaps/
+    # sudo systemctl enable lightdm
+    # echo -e "\e[32mOK\e[0m"
 }
 
 # INSTALACION DE REQUERIMIENTOS
