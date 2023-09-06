@@ -161,6 +161,13 @@ xdg-user-dirs-update
 
 # Hyprland
 
+## Instalacion y config automatica
+Podemos ejecutar el script "install.sh", si deseamos hacer la instalacion de todos los paquetes necesarios de forma automatica y copiar los dotfiles
+```bash
+./install.sh
+```
+Posteriormente a esto haremos un reinicio, si decidimos realizar el script ya habremos terminado
+
 ## Instalacion de Hyprland
 Para poder instalar hyprland necesitamos yay
 ```bash 
@@ -177,18 +184,11 @@ Instalamos Qtile y el logging manager
 yay -S hyprland kitty brave-bin
 ```
 ```bash
-sudo pacman -S lightdm lightdm-gtk-greeter
+sudo pacman -S sddm
 ```
 ```bash
-systemctl enable lightdm
+systemctl enable sddm
 ```
-
-## Instalacion y config automatica
-Podemos ejecutar el script "install.sh", si deseamos hacer la instalacion de todos los paquetes necesarios de forma automatica y copiar los dotfiles
-```bash
-./install.sh
-```
-Posteriormente a esto haremos un reinicio, si decidimos realizar el script ya habremos terminado
 
 ## Instalacion paquetes necesarios para Hyprland
 Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesitamos (algunos de estos paquetes no son necesarios)
@@ -196,7 +196,7 @@ Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesi
 sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher 
 ```
 ```bash
-yay -S wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux
+yay -S sddm-theme-sugar-candy-git wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux
 ```
 
 ## Mi configuracion
