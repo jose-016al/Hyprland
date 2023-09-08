@@ -1,19 +1,19 @@
 {
     "position": "top",
     "layer": "top",
-      "output": "HDMI-A-1",
+      "output": "eDP-1",
     "height": 14,
-    "margin-top": 8,
-    "margin-bottom": -10,
+    "margin-top": 0,
+    "margin-bottom": -15,
     "margin-left": 0,
     "margin-right": 0,
-    "modules-left": ["custom/launcher", "custom/playerctl", "custom/playerlabel"],
-    "modules-center": ["wlr/workspaces"],
-    "modules-right": [ "clock","pulseaudio","network","tray"],
+    "modules-left": ["custom/launcher","wlr/workspaces", "custom/playerctl", "custom/playerlabel"],
+    "modules-center": ["clock"],
+    "modules-right": [ "tray","pulseaudio","battery"],
     // Modules configuration
   "clock": {
     "format": "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%H:%M}",
-    "format-alt": "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%A %d de %B de %Y}",
+    "format-alt": "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%d/%m/%Y}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
                 "mode"          : "month",
