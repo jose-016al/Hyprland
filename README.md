@@ -16,7 +16,7 @@
   - [Instalacion y config automatica](#instalacion-y-config-automatica)
   - [Instalacion paquetes necesarios para Hyprland](#instalacion-paquetes-necesarios-para-hyprland)
   - [Mi configuracion](#mi-configuracion)
-  - [Creditos](#👤-creditos)
+  - [Creditos](#creditos)
 
 # Enlaces a consultar
 - **[Gnome-Look](https://www.gnome-look.org/s/Gnome/browse/)**
@@ -212,6 +212,6 @@ Copiamos el directorio .config
 cp -r dotfiles ~/
 ```
 
-## 👤 Creditos 
+## Creditos 
 <p>Agradecimientos a @<a href="https://github.com/f3l3p1n0">f3l3p1n0</a> por los dotfiles iniciales. Mi trabajo se basa en sus contribuciones.</p>
 <p><a href="https://github.com/f3l3p1n0/bluehypr">BlueHypr - f3l3p1n0</a></p>
