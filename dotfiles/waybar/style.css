@@ -65,10 +65,10 @@ window#waybar {
 }
 
 #tray {
-    background: transparent;
+    background: #11111D; /* rgba(26,26,26,.9); */
     margin: 5px 5px 5px 5px;
     border-radius: 16px;
-    padding: 0px 5px;
+    padding: 0 1rem;
     /*border-right: solid 1px #282738;*/
 }
 
@@ -93,6 +93,14 @@ window#waybar {
 }
 
 #network {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#battery {
     background: #11111D; /* rgba(26,26,26,.9); */
     padding: 0 1rem;
     border-radius: 0.75rem;;
