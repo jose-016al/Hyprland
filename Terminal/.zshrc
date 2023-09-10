@@ -58,7 +58,7 @@ neofetch
 # SIstema
 alias apagar="shutdown now"
 alias reiniciar="reboot"
-alias actualiza="sudo pacman -Syyu"
+alias actualiza="sudo pacman -Syyu && yay -Syyu"
 alias instalar="sudo pacman -S"
 alias desinstalar="sudo pacman -Rsn" 
 alias lista="sudo pacman -Qe"
@@ -75,12 +75,6 @@ alias cat='bat'
 # Java
 alias java-status="archlinux-java status"
 alias change-java="sudo archlinux-java set java-11-openjdk"
-
-# Code
-alias qtile_status="code ~/.local/share/qtile/qtile.log"
-
-# Actualizaciones
-alias updateYay="yay -S visual-studio-code-bin"
  
 # Docker
 alias server="~/github/Docker/.server.bash"
@@ -154,7 +148,8 @@ function rmk(){
 # (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalizesource ~/powerlevel10k/powerlevel10k.zsh-theme
 # source /home/jose/.powerlevel10k/powerlevel10k.zsh-theme
 # source /home/jose/.powerlevel10k/powerlevel10k.zsh-theme
-# source /home/jose/.powerlevel10k/powerlevel10k.zsh-theme
+source /home/jose/.powerlevel10k/powerlevel10k.zsh-theme
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+# source ~/powerlevel10k/powerlevel10k.zsh-theme

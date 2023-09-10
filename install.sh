@@ -128,6 +128,7 @@ function copia() {
     # swappy
     printf "Swappy......................."
     mkdir "$HOME/.config/swappy"
+    mkdir "$HOME/Imágenes/Screenshots"
     cp -r $1/dotfiles/swappy/* "$HOME/.config/swappy"
     echo -e "\e[32mOK\e[0m"
 
