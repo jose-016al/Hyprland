@@ -16,10 +16,10 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    /* Resolution : 1920x1080 */
+    /* Resolution : 1360x780 */
     mainbox-spacing:             100px;
-    mainbox-margin:              15px 40px;
-    message-margin:              0px 350px;
+    mainbox-margin:              15px 200px;
+    message-margin:              0px 250px;
     message-padding:             15px;
     message-border-radius:       15px;
     listview-spacing:            50px;
