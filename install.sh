@@ -168,12 +168,12 @@ function requerimientos() {
 function paquetes() {
     # wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git
     printf "Instalando paquetes yay......"
-    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git > /dev/null 2>&1
+    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git ligth > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
     # sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools > /dev/null 2>&1
+    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 
