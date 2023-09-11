@@ -1,7 +1,7 @@
 {
   "position": "top",
   "layer": "top",
-  "output": "HDMI-A-1",
+  "output": "eDP-1",
   "height": 45,
   "margin-top": 0,
   "margin-bottom": -15,
@@ -19,6 +19,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "backlight",
     "battery"
   ],
   // Modules configuration
@@ -135,7 +136,7 @@
     "spacing": 5
   },
   "backlight": {
-    // "device": "acpi_video1",
+    "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": [
       "",
@@ -147,9 +148,9 @@
       "",
       "",
       ""
-    ]
-    //	"on-scroll-up":,
-    //	"on-scroll-down":,
+    ],
+    "on-scroll-up": "bash ~/.config/scripts/brightness up",
+    "on-scroll-down": "bash ~/.config/scripts/brightness down"
   },
   "pulseaudio": {
     "format": "<span foreground='#6C77BB' font='14.5' rise='-1000'>{icon}</span> {volume}%",
@@ -187,15 +188,6 @@
     //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
     "on-click-right": "nemo /run/media/f3l3p1n0/archivos/copia_seguridad_curso/'Ciclo Superior Ciberseguridad'"
     //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
-  },
-  "custom/wf-recorder": {
-    "format": "{}",
-    "interval": "once",
-    "exec": "echo ''",
-    "tooltip": "false",
-    "exec-if": "pgrep 'wf-recorder'",
-    "on-click": "exec ./scripts/wlrecord.sh",
-    "signal": 8
   },
   "custom/hyprpicker": {
     "format": "󰈋",

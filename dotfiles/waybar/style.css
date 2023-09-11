@@ -83,13 +83,11 @@ window#waybar {
 }
 
 #backlight {
-    background-color: #24283b;
-    color: #db4b4b;
-    border-radius: 0px 0px 0px 0px;
-    margin: 5px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 0px 0px;
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    margin: 5px 5px 5px 5px;
+    
 }
 
 #network {
@@ -105,7 +103,7 @@ window#waybar {
     padding: 0 1rem;
     border-radius: 0.75rem;;
     color: #fff;
-    margin-right: 10px;
+    margin: 5px 15px 5px 5px;
 }
 
 #pulseaudio {
@@ -113,7 +111,7 @@ window#waybar {
     padding: 0 1rem;
     border-radius: 0.75rem;;
     color: #fff;
-    margin-right: 10px;
+    margin: 5px 5px 5px 5px;
 }
 
 #pulseaudio.muted {
@@ -121,7 +119,7 @@ window#waybar {
     padding: 0 1rem;
     border-radius: 0.75rem;;
     color: red;
-    margin-right: 9px;
+    margin: 5px 5px 5px 5px;
 }
 
 #custom-launcher {
