@@ -3,7 +3,7 @@ down() {
   pamixer -d 5
   volume=$(pamixer --get-volume)
   if [ $volume -gt 0 ]; then
-    dunstify -a "VOLUME" "Bajando a $volume%" -h int:value:"$volume" -i audio-volume-low-symbolic -r 2593 -u normal
+    dunstify -a "Volumen" "Bajando a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
     canberra-gtk-play -i dialog-error -d "error"
   fi
 }
@@ -12,7 +12,7 @@ up() {
   pamixer -i 5
   volume=$(pamixer --get-volume)
   if [ $volume -lt 100 ]; then
-    dunstify -a "VOLUME" "Subiendo a $volume%" -h int:value:"$volume" -i audio-volume-high-symbolic -r 2593 -u normal
+    dunstify -a "Volumen" "Subiendo a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
     canberra-gtk-play -i dialog-error -d "error"
   fi
 }
@@ -25,10 +25,10 @@ mute() {
   muted="$(pamixer --get-mute)"
   if $muted; then
     pamixer -u
-    dunstify -a "VOLUME" "UNMUTED" -i audio-volume-high-symbolic -r 2593 -u normal
+    dunstify -a "Volumen" "UNMUTED" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
   else 
     pamixer -m
-    dunstify -a "VOLUME" "MUTED" -i audio-volume-muted-symbolic -r 2593 -u normal
+    dunstify -a "Volumen" "MUTED" -i /home/jose/.config/scripts/icons/volume-mute.svg -r 2593 -u normal
   fi
 }
 

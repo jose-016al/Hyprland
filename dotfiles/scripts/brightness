@@ -2,13 +2,13 @@
 decrease_brightness() {
     light -U 5   # Disminuye el brillo en 5 unidades (ajusta según tus preferencias)
     brightness=$(light -G)
-    dunstify -a "BRILLO" "Bajando a ${brightness}%" -h int:value:"$brightness" -i /usr/share/icons/hicolor/scalable/status/keyboard-brightness.svg -r 2594 -u normal
+    dunstify -a "Brillo" "Bajando a ${brightness}%" -h int:value:"$brightness" -i /home/jose/.config/scripts/icons/brightness.svg -r 2594 -u normal
 }
 
 increase_brightness() {
     light -A 5   # Aumenta el brillo en 5 unidades (ajusta según tus preferencias)
     brightness=$(light -G)
-    dunstify -a "BRILLO" "Subiendo a ${brightness}%" -h int:value:"$brightness" -i /usr/share/icons/hicolor/48x48/status/display-brightness.png -r 2594 -u normal
+    dunstify -a "Brillo" "Subiendo a ${brightness}%" -h int:value:"$brightness" -i /home/jose/.config/scripts/icons/brightness.svg -r 2594 -u normal
 }
 
 case "$1" in
