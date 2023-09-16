@@ -173,7 +173,7 @@ function paquetes() {
 
     # sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib > /dev/null 2>&1
+    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib acpi > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 

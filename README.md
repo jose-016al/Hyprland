@@ -193,7 +193,7 @@ systemctl enable sddm
 ## Instalacion paquetes necesarios para Hyprland
 Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesitamos (algunos de estos paquetes no son necesarios)
 ```bash
-sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher pacman-contrib
+sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher pacman-contrib acpi
 ```
 ```bash
 yay -S sddm-theme-sugar-candy-git wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux light
