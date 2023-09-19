@@ -3,7 +3,7 @@
 [global]
     monitor = all;
     width = 300;
-    height = 100;
+    height = 125;
     origin = "top-center";
     offset = "15x15";
     # scale = 0;

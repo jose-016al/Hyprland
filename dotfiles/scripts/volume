@@ -2,19 +2,15 @@
 down() {
   pamixer -d 5
   volume=$(pamixer --get-volume)
-  if [ $volume -gt 0 ]; then
-    dunstify -a "Volumen" "Bajando a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
-    canberra-gtk-play -i dialog-error -d "error"
-  fi
+  dunstify -a "Volumen" "Bajando a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
+  canberra-gtk-play -i dialog-error -d "error"
 }
 
 up() {
   pamixer -i 5
   volume=$(pamixer --get-volume)
-  if [ $volume -lt 100 ]; then
-    dunstify -a "Volumen" "Subiendo a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
-    canberra-gtk-play -i dialog-error -d "error"
-  fi
+  dunstify -a "Volumen" "Subiendo a $volume%" -h int:value:"$volume" -i /home/jose/.config/scripts/icons/volume.svg -r 2593 -u normal
+  canberra-gtk-play -i dialog-error -d "error"
 }
 
 playpause() {
