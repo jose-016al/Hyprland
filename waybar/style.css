@@ -1,0 +1,225 @@
+/* Personalizaciones globales */
+* {
+    border: none;
+    border-radius: 0px;
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family: MesloLGS NF;
+    font-size: 14.5px;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent /*rgba(30, 30, 46, 0.5);*/
+    /*border-bottom: 1px solid #282828;*/
+}
+
+#custom-launcher, #clock, #custom-checkupdates, #pulseaudio, #battery, #network, #custom-machines {
+	background: transparent;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    border: solid 0px #f4d9e1;
+}
+
+/* Personalizacion del lanzador del powermenu - rofi */
+#custom-launcher {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    margin-left: 15px;
+    margin-right: 15px;
+    /*border-right: solid 1px #282738;*/
+    font-size: 14.5px;
+}
+#custom-launcher button:hover {
+    background-color: #7aa2f7;
+    color: black;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+/* Personalizacion de los workspaces */
+#workspaces {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;
+    margin: 5px 5px 5px 5px;
+    padding: 0px 5px 0px 5px;
+    border: solid 0px #f4d9e1;
+    font-weight: normal;
+    font-style: normal;
+}
+#workspaces button {
+    padding: 0px 10px;
+    border-radius: 15px;
+    color: #7aa2f7;
+}
+#workspaces button.active {
+    color: #f8f8f2;
+    background-color: transparent;
+    border-radius: 15px;
+}
+#workspaces button:hover {
+	background-color: #7aa2f7;
+	color: black;
+	border-radius: 15px;
+}
+
+/* Personalizacion del playerctl */
+#custom-playerctl {
+	background: transparent;
+	padding-left: 15px;
+    padding-right: 8px;
+	border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+}
+
+/* Personalizacion del playerlabel */ 
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    font-size: 12px;
+    color: #98971a
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+}
+
+/* Personalizacion de la hora */
+#clock {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin-right: 15px;
+    /*font-weight: bold;*/
+    /*border-left: solid 1px #282738;*/
+}
+
+/* Personlizacion del tray */
+#tray {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+    padding: 0 1rem;
+    /*border-right: solid 1px #282738;*/
+}
+
+/* Personlizacion del script checkupdates - pacman-contrib */
+#custom-checkupdates {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personlizacion del volummen - pulseaudio, pavucontrol, pamixer */
+#pulseaudio {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+#pulseaudio.muted {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: red;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion del brillo - light */
+#backlight {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion de la bateria */
+#battery {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 15px 5px 5px;
+}
+
+
+/* Modulos que no estan cargados */
+
+
+/* Personalizacion de la memoria */
+#memory {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion de la cpu */
+#cpu {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion del disco */
+#disk {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion de network */
+#network {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
+
+/* Personalizacion de custom machines */
+#custom-machines {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    /*border-right: solid 1px #282738;*/
+    font-size: 14.5px;
+}
+
+/* Personalizacion de custom archivos */
+#custom-archivos {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    /*border-right: solid 1px #282738;*/
+    font-size: 14.5px;
+}
+
+/* Personalizacion de hyprpicker */
+#custom-hyprpicker {
+    background: #11111D; /* rgba(26,26,26,.9); */
+    padding: 0 1rem;
+    border-radius: 0.75rem;;
+    color: #fff;
+    margin: 5px 5px 5px 5px;
+}
