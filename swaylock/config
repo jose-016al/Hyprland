@@ -1,0 +1,33 @@
+color=#11111D
+inside-color=#181825
+font=Inter;
+indicator-radius=150;
+line-color=#181825
+ring-color=#1e1e2e
+text-color=#cdd6f4;
+datestr=%d/%m
+
+layout-bg-color=#22222D
+layout-text-color=#f8f8f2
+
+#= color de contraseña correcta =#
+inside-clear-color=#cdd6f4
+line-clear-color=#181825
+ring-clear-color=#cba6f7
+text-clear-color=#22222D
+
+inside-ver-color=#181825
+line-ver-color=#cba6f7
+ring-ver-color=#cba6f7
+text-ver-color=#cdd6f4
+
+#= Color de contraseña incorrecta =#
+inside-wrong-color=#181825
+line-wrong-color=#181825
+ring-wrong-color=#f38ba8
+text-wrong-color=#f38ba8
+
+bs-hl-color=#f38ba8
+key-hl-color=#cba6f7
+
+text-caps-lock-color=#f8f8f2
