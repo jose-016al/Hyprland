@@ -111,9 +111,9 @@
   },
   
   "custom/checkupdates": {
-    "exec": "~/.config/scripts/updates.sh",
+    "exec": "~/.config/scripts/updates.sh &",
     "format": " {}",
-    "interval": 3600
+    "interval": 1800
   },
 
   "pulseaudio": {
