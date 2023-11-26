@@ -19,6 +19,7 @@
   - [Creditos](#creditos)
 
 # Enlaces a consultar
+- **[Wine](https://dev.to/yofreormaza/instalar-wine-en-arch-linux-4bok)**
 - **[Gnome-Look](https://www.gnome-look.org/s/Gnome/browse/)**
 - **[Hyprland docs](https://hyprland.org/)**
 - **[Mejorar los mirrors](https://salmorejogeek.com/2016/11/18/usando-reflector-para-descargar-mas-rapido-de-los-mirros-de-arch-antergos/)**
@@ -196,7 +197,7 @@ Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesi
 sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher pacman-contrib 
 ```
 ```bash
-yay -S sddm-theme-sugar-candy-git wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux light
+yay -S sddm-theme-sugar-candy-git wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux light transmission-cli burpsuite
 ```
 
 ## Mi configuracion

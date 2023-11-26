@@ -74,10 +74,11 @@ alias cat='bat'
 
 # Java
 alias java-status="archlinux-java status"
-alias change-java="sudo archlinux-java set java-11-openjdk"
+alias change-java="sudo archlinux-java set java-21-openjdk"
  
 # Docker
-alias server="~/github/Docker/.server.bash"
+alias server="~/.server.bash"
+alias kali="~/.kali.bash"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
