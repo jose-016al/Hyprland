@@ -26,6 +26,7 @@
 - **[Nerd Fonts](https://www.nerdfonts.com/cheat-sheet)**
 - **[Instalar Docker](https://linuxhint.com/arch-linux-docker-tutorial/)**
 - **[Problemas con las llaves](https://superlativoblog.wordpress.com/2017/01/06/solucion-al-problema-de-llaves-actualizando-arch-o-derivadas/)**
+- **[Screen Sharing](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)**
 
 # Arch Linux
 
