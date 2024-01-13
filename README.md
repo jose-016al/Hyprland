@@ -2,6 +2,16 @@
 
 ![Hyprland](.screenshots/hyprland.png)
 
+# Otras opciones de entorno de escritorio
+
+Además de Hyprland, hay varios otros entornos de escritorio populares disponibles para Arch Linux. Si estás interesado en explorar otras opciones, aquí tienes una recomendación:
+
+## Qtile
+
+[Qtile](http://www.qtile.org/) es un gestor de ventanas dinámico para X11 que se configura completamente en Python. Es ligero y altamente personalizable, lo que lo convierte en una excelente opción para aquellos que prefieren un entorno de escritorio más minimalista.
+
+Si deseas explorar la configuración personalizada de Qtile, echa un vistazo a mis [dotfiles](https://github.com/jose-016al/Qtile). de Qtile en GitHub.
+
 # Tabla de contenidos
 - [ArchLinux](#arch-linux)
   - [Instalacion de ArchLinux](#instalacion-de-archlinux)
