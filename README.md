@@ -1,4 +1,4 @@
-# ArchLinux & Hyprland
+# ArchLinux & Hyprland 2.0
 
 ![Hyprland](.screenshots/hyprland.png)
 
