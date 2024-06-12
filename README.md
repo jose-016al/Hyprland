@@ -1,5 +1,44 @@
 # ArchLinux & Hyprland 2.0
 
+
+Sin intalamos hyprland desde el script de archinstall, se nos instalaran los siguientes paquetes
+
+hyprland, kitty, wofi, qt5-wayland, dunst, dolphin, xsg-desktop-portal-hyprland, qt5-wayland
+
+Instalacion manual 
+
+Para poder instalar hyprland necesitamos yay
+```bash 
+git clone https://aur.archlinux.org/yay.git
+```
+```bash
+cd yay
+```
+```bash
+makepkg -si # si este comando no va necesitaremos instalar base-devel por medio de pacman
+```
+
+yay -S hyprland kitty brave-bin wofi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![Hyprland](.screenshots/hyprland.png)
 
 # Otras opciones de entorno de escritorio
