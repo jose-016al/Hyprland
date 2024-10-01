@@ -54,11 +54,13 @@ Si deseas explorar la configuración personalizada de Qtile, echa un vistazo a m
 # Tabla de contenidos
 - [ArchLinux](#arch-linux)
   - [Instalacion de ArchLinux](#instalacion-de-archlinux)
+    - [Definir la distribución de teclado y fuente en consola](#definir-la-distribución-de-teclado-y-fuente-en-consola)
     - [Conexion wifi](#conexion-wifi)
     - [Particiones y formato de disco](#particionar-y-formatear-el-disco)
     - [Instalar paquetes esenciales](#instalar-paquetes-esenciales)
+    - [Configuración del sistema](#configuración-del-sistema)
     - [Instalacion del gestor de arranque](#instalacion-del-gestor-de-arranque)
-    - [Antes de reiniciar](#antes-de-reiniciar)
+    - [Finalización](#finalización)
   - [Configuracion adicional de Arch Linux](#configuracion-adicional-de-arch-linux)
 - [Hyprland](#hyprland)
   - [Instalacion de Hyprland](#instalacion-de-hyprland)
@@ -76,13 +78,19 @@ Si deseas explorar la configuración personalizada de Qtile, echa un vistazo a m
 - **[Instalar Docker](https://linuxhint.com/arch-linux-docker-tutorial/)**
 - **[Problemas con las llaves](https://superlativoblog.wordpress.com/2017/01/06/solucion-al-problema-de-llaves-actualizando-arch-o-derivadas/)**
 - **[Screen Sharing](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)**
+- **[Virtual maquines](https://platzi.com/tutoriales/2383-prework-linux/21080-instalacion-de-virtualbox-en-archlinux/)**
 
 # Arch Linux
 
 ## Instalacion de ArchLinux 
-Como la instalacion puede cambiar, lo mejor seria diriginos directamente a la [guide installation](https://wiki.archlinux.org/title/Installation_guide_(Espa%C3%B1ol)) y seguir paso a paso la guia de instalacion de archlinux  
+Debido a que la instalación puede variar, lo más recomendable es dirigirnos directamente a la [guide installation](https://wiki.archlinux.org/title/Installation_guide_(Espa%C3%B1ol)) y seguirla paso a paso para Arch Linux.  
 
-Es posible que nos salga el tamaño de fuente demasiado pequeño, por ahora podemos configurar esto con este comando
+### Definir la distribución de teclado y fuente en consola
+Para configurar la distribucion de teclado en español
+```bash
+loadkeys es
+```
+Es posible que el tamaño de la fuente sea demasiado pequeño. Por ahora, podemos ajustar esto utilizando el siguiente comando:  
 ```bash
 setfont ter-118n
 ```
@@ -102,110 +110,126 @@ station wlan0 connect SSID
 ```
 
 ### Particionar y formatear el disco
-Usaremos cfdisk por su comodidad
+Optaremos por utilizar cfdisk debido a su facilidad de uso  
 ```bash
 cfdisk
 ```
-Para realizar un dual boot tendremos que crear una particion EFI 
-```bash
-mkfs.vfat -F 32 /dev/nvme0n1p6
-```
-Particionamos el disco usando cfdisk  
-    - 150 MB - EFI SYSTEM  
-    - 15 GB - SWAP  
-    - RESTO - /  
-podemos ver las particiones fuera de cfdisk con
+Particionamos el disco utilizando cfdisk de la siguiente manera:  
+  - 150 MB - EFI SYSTEM
+  - 15 GB - SWAP
+  - Resto del espacio - /  
+Para ver las particiones fuera de cfdisk, podemos utilizar el siguiente comando:  
 ```bash
 lsblk
 ```
-Formateamos la particion swap
+Procedemos a formatear la partición SWAP
 ```bash
 mkswap /dev/sda2
 ```
 ```bash
 swapon /dev/sda2
 ```
-Formateamos las particiones: /
+Procedemos a formatear la partición ROOT
 ```bash
 mkfs.ext4 /dev/sda3
-```
-Una vez terminado el particionado del disco si queremos un dual boot podemos seguir la instlaacion con el script de archinstall  
-     
-Montamos los sistemas de archivos
+```  
+Procedemos a montar los sistemas de archivos  
 ```bash
 mount /dev/sda3 /mnt
 ```
-Montamos la particion de EFI 
+Montamos la partición EFI  
 ```bash
 mount --mkdir /dev/sda1 /mnt/boot
 ```
 
 ### Instalar paquetes esenciales
-Algunos paquetes quizas no sean esenciales pero podemos aprovechar e instalarlos ya
 ```bash
-pacstrap /mnt base base-devel linux linux-firmware networkmanager sudo grub efibootmgr nano iwd git
+pacstrap /mnt base base-devel linux linux-firmware linux-headers mkinitcpio networkmanager sudo grub efibootmgr nano iwd git
 ```
 
-### Instalacion del gestor de arranque
-Procedemos con la configuracion del grub
-Configuramos el grub
+### Configuración del sistema
+Generamos un archivo fstab que contiene las particiones del sistema, utilizando UUID para montarlas automáticamente al inicio  
 ```bash
-grub-install --target=x86_64-efi --efi-directory=/boot
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+Cambiamos el entorno de trabajo al sistema instalado en /mnt, permitiendo realizar configuraciones como si estuviéramos en el sistema recién instalado   
+```bash
+arch-chroot /mnt
+```
+Creamos un enlace simbólico a la zona horaria deseada, configurando la hora local del sistema  
+```bash
+ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+```
+Sincronizamos el reloj de hardware con la hora del sistema, asegurando que ambos estén alineados  
+```bash
+hwclock --systohc
+```
+Abrimos el archivo de configuración de locales en el editor nano, donde se pueden activar los idiomas deseados  
+```bash
+nano /etc/locale.gen
+```
+Generamos los locales especificados en el archivo /etc/locale.gen, permitiendo la utilización de diferentes idiomas y formatos regionales  
+```bash
+locale-gen
+```
+Establecemos el idioma predeterminado del sistema, configurando la variable de entorno LANG a español  
+```bash
+echo LANG=es_ES.UTF-8 > /etc/locale.conf
+```
+Crea el archivo vconsole.conf para establecer el mapa de teclado en español 
+```bash
+nano KEYMAP=es > /etc/vconsole.conf
+```
+Definimos el nombre del host del sistema, que se utilizará en la red 
+```bash
+echo ArchLinux > /etc/hostname
+```
+Cambiamos la contraseña del usuario root, asegurando el acceso seguro al sistema  
+```bash
+passwd
+```
+Cremaos un usuario
+```bash
+useradd -m -g users -G wheel -s /bin/bash jose  
 ```
 ```bash
-grub-mkconfig -o /boot/grub/grub.cfg
+passwd
 ```
-
-### Antes de reiniciar
+Añadimos al usuario al archivo de sudoers  
+```bash
+nano /etc/sudoers
+```
 Asegurarse de habilitar el servicio networkManager
 ```bash
 systemctl enable NetworkManager
 ```
-Una vez hecho esto ya podemos salir de la instalacion
+
+### Instalacion del gestor de arranque
+Instalamos GRUB en modo EFI y asigna "Arch" como identificador del cargador de arranque  
 ```bash
-exit
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 ```
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
+```
+Generamos el archivo de configuración de GRUB  
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Finalización
+Reiniciamos el sistema, y si aparece el gestor de arranque de Arch, todo habrá salido correctamente.
 ```bash
 umount -R /mnt
 ```
-Y reiniciamos el sistema, si nos sale el gestor de arranque de Arch habra salido todo bien
 ```bash
 reboot
 ```
-
-## Configuracion adicional de Arch Linux
-Editamos el archivo hosts
-```bash
-nano /etc/hosts
-
-127.0.0.1	localhost   
-::1		    localhost    
-127.0.1.1	ArchLinux.localhost	ArchLinux      
-```
-Creacion de un nuevo usuario
-```bash
-useradd -m jose
-```
-```bash
-passwd jose
-```
-```bash
-usermod -aG wheel,video,audio,storage jose
-```
-tendremos que configurar el archivo sudoers para poder ser root
-```bash
-nano /etc/sudoers
-```
-Para poder instalar entornos de escritorio necesitamos instalar xorg
-```bash
-sudo pacman -S xorg xorg-server
-```
-Ahora generamos nuestras carpetas personales básicas (Escritorio, Descargas, Música, Etc.).
-Para esto instalamos la herramienta xdg-user-dirs:
+Ahora creamos las carpetas personales básicas (Escritorio, Descargas, Música, etc.). Para ello, instalamos la herramienta xdg-user-dirs:  
 ```bash
 sudo pacman -S xdg-user-dirs
 ```
-Por ultimo lo ejecutamos para que nos genere nuestras carpetas.
+Finalmente, lo ejecutamos para generar nuestras carpetas  
 ```bash
 xdg-user-dirs-update
 ```
