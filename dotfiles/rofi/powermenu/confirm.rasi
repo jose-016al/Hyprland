@@ -16,6 +16,8 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
+    background-window:           black/60%;
+    background-normal:           white/5%;
     background:     #2E3440FF;
     background-alt: #383E4AFF;
     foreground:     #E5E9F0FF;
@@ -35,7 +37,7 @@ window {
     width:                       280px;
     border-radius:               20px;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            var(background-window);
 }
 
 /*****----- Main Box -----*****/
@@ -51,7 +53,7 @@ message {
     margin:                      0px;
     padding:                     10px;
     border-radius:               10px;
-    background-color:            @background-alt;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 textbox {
@@ -86,7 +88,7 @@ listview {
 element {
     padding:                     20px 10px;
     border-radius:               20px;
-    background-color:            @background-alt;
+    background-color:            var(background-normal);
     text-color:                  @foreground;
     cursor:                      pointer;
 }

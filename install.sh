@@ -54,14 +54,14 @@ function copia() {
 
     # wallpaper
     printf "Wallpaper...................."
-    cp -r $1/.screenshots/wallpaper.png "$HOME/Imágenes/"
+    cp -r $1/dotfiles/.screenshots/wallpaper.png "$HOME/Imágenes/"
     echo -e "\e[32mOK\e[0m"
 
     # waybar
     printf "Waybar......................."
     mkdir "$HOME/.config/waybar"
     cp -r $1/dotfiles/waybar/* "$HOME/.config/waybar/"
-    chmod +x "$HOME/.config/waybar/scripts/mediaplayer.py" "$HOME/.config/waybar/scripts/wlrecord.sh"
+    chmod +x "$HOME/.config/waybar/scripts/mediaplayer.py"
     chmod +x "$HOME/.config/waybar/scripts/playerctl/playerctl.sh"
     echo -e "\e[32mOK\e[0m"
 
@@ -82,7 +82,7 @@ function copia() {
     printf "Zsh.........................."
     sudo usermod --shell /usr/bin/zsh $USER > /dev/null 2>&1
     sudo usermod --shell /usr/bin/zsh root > /dev/null 2>&1
-    cp -r "$1/Terminal/.zshrc" "$HOME/"
+    cp -r "$1/dotfiles/Terminal/.zshrc" "$HOME/"
     sudo ln -s -f "$HOME/.zshrc" "/root/.zshrc"
     echo -e "\e[32mOK\e[0m"
 
@@ -90,7 +90,7 @@ function copia() {
     printf "Powerlevel10k................"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k > /dev/null 2>&1
     sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/.powerlevel10k > /dev/null 2>&1
-    cp -r $1/Terminal/.p10k.zsh "$HOME/"
+    cp -r $1/dotfiles/Terminal/.p10k.zsh "$HOME/"
     sudo cp -r $1/Terminal/.p10k.zsh "/root/"
     echo -e "\e[32mOK\e[0m"
 
@@ -98,7 +98,7 @@ function copia() {
     printf "Plugin sudo.................."
     cd /usr/share
     sudo mkdir zsh-sudo
-    sudo chown $USER:$USER zsh-sudo/
+    sudo chown -R $USER zsh-sudo/
     cd zsh-sudo
     wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
@@ -145,6 +145,16 @@ function copia() {
     sudo cp -r "$1/dotfiles/sddm/theme.conf" "/usr/share/sddm/themes/Sugar-Candy/"
     sudo cp -r "$1/dotfiles/sddm/sddm.conf" "/etc/"
     echo -e "\e[32mOK\e[0m"
+
+    # custom
+    printf "Custom......................"
+    cp -r $1/dotfiles/gtk-3.0/ "$HOME/.config/"
+    cp -r $1/dotfiles/.gtkrc-2.0 "$HOME/"
+    sudo cp -r $1/dotfiles/Custom/Kripton-v40 "/usr/share/themes/"
+    sudo cp -r $1/dotfiles/Custom/Papirus "/usr/share/icons/"
+    sudo cp -r $1/dotfiles/Custom/Breeze "/usr/share/icons/"
+    sudo cp -r $1/dotfiles/Custom/rofi "/usr/share/"
+    echo -e "\e[32mOK\e[0m"
 }
 
 # INSTALACION DE REQUERIMIENTOS
@@ -168,12 +178,12 @@ function requerimientos() {
 function paquetes() {
     # wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git
     printf "Instalando paquetes yay......"
-    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git ligth transmission-cli burpsuite > /dev/null 2>&1
+    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt gnome-disk-utility evince sddm-theme-sugar-candy-git ligth > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
     # sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib acpi > /dev/null 2>&1
+    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pulseaudio pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib acpi ntp > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 

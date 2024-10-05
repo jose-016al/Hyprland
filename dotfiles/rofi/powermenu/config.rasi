@@ -19,7 +19,7 @@ configuration {
     /* Resolution : 1360x780 */
     mainbox-spacing:             100px;
     mainbox-margin:              15px 200px;
-    message-margin:              0px 250px;
+    message-margin:              0px 100px;
     message-padding:             15px;
     message-border-radius:       15px;
     listview-spacing:            50px;
@@ -30,7 +30,7 @@ configuration {
     textbox-font:                "Maple Mono 12";
     element-text-font:           "feather 64";
 
-    background-window:           black/50%;
+    background-window:           black/85%;
     background-normal:           white/5%;
     background-selected:         white/15%;
     foreground-normal:           white;
