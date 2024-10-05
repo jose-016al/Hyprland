@@ -54,7 +54,7 @@ function copia() {
 
     # wallpaper
     printf "Wallpaper...................."
-    cp -r $1/.screenshots/wallpaper.png "$HOME/Imágenes/"
+    cp -r $1/dotfiles/.screenshots/wallpaper.png "$HOME/Imágenes/"
     echo -e "\e[32mOK\e[0m"
 
     # waybar
@@ -82,7 +82,7 @@ function copia() {
     printf "Zsh.........................."
     sudo usermod --shell /usr/bin/zsh $USER > /dev/null 2>&1
     sudo usermod --shell /usr/bin/zsh root > /dev/null 2>&1
-    cp -r "$1/Terminal/.zshrc" "$HOME/"
+    cp -r "$1/dotfiles/Terminal/.zshrc" "$HOME/"
     sudo ln -s -f "$HOME/.zshrc" "/root/.zshrc"
     echo -e "\e[32mOK\e[0m"
 
@@ -90,7 +90,7 @@ function copia() {
     printf "Powerlevel10k................"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k > /dev/null 2>&1
     sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/.powerlevel10k > /dev/null 2>&1
-    cp -r $1/Terminal/.p10k.zsh "$HOME/"
+    cp -r $1/dotfiles/Terminal/.p10k.zsh "$HOME/"
     sudo cp -r $1/Terminal/.p10k.zsh "/root/"
     echo -e "\e[32mOK\e[0m"
 
@@ -150,10 +150,10 @@ function copia() {
     printf "Custom......................"
     cp -r $1/dotfiles/gtk-3.0/ "$HOME/.config/"
     cp -r $1/dotfiles/.gtkrc-2.0 "$HOME/"
-    sudo cp -r $1/Custom/Kripton-v40 "/usr/share/themes/"
-    sudo cp -r $1/Custom/Papirus "/usr/share/icons/"
-    sudo cp -r $1/Custom/Breeze "/usr/share/icons/"
-    sudo cp -r $1/Custom/rofi "/usr/share/"
+    sudo cp -r $1/dotfiles/Custom/Kripton-v40 "/usr/share/themes/"
+    sudo cp -r $1/dotfiles/Custom/Papirus "/usr/share/icons/"
+    sudo cp -r $1/dotfiles/Custom/Breeze "/usr/share/icons/"
+    sudo cp -r $1/dotfiles/Custom/rofi "/usr/share/"
     echo -e "\e[32mOK\e[0m"
 }
 
