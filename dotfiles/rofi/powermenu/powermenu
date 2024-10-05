@@ -28,7 +28,7 @@ no=''
 
 rofi_cmd() {
     rofi -dmenu \
-        -p "Hasta la próxima línea de código ${USER} !!" \
+        -p "¡Hasta la próxima línea de código ${USER}!" \
         -mesg "Hace: $uptime, mi sistema no conoce la palabra 'descanso'" \
         -theme ${dir}/${theme}.rasi
     }

@@ -1,45 +1,6 @@
-# ArchLinux & Hyprland 2.0
+# ArchLinux & Hyprland
 
-
-Sin intalamos hyprland desde el script de archinstall, se nos instalaran los siguientes paquetes
-
-hyprland, kitty, wofi, qt5-wayland, dunst, dolphin, xsg-desktop-portal-hyprland, qt5-wayland
-
-Instalacion manual 
-
-Para poder instalar hyprland necesitamos yay
-```bash 
-git clone https://aur.archlinux.org/yay.git
-```
-```bash
-cd yay
-```
-```bash
-makepkg -si # si este comando no va necesitaremos instalar base-devel por medio de pacman
-```
-
-yay -S hyprland kitty brave-bin wofi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-![Hyprland](.screenshots/hyprland.png)
+![Hyprland](.screenshots/hyprland2.gif)
 
 # Otras opciones de entorno de escritorio
 
@@ -64,21 +25,24 @@ Si deseas explorar la configuración personalizada de Qtile, echa un vistazo a m
   - [Configuracion adicional de Arch Linux](#configuracion-adicional-de-arch-linux)
 - [Hyprland](#hyprland)
   - [Instalacion de Hyprland](#instalacion-de-hyprland)
-  - [Instalacion y config automatica](#instalacion-y-config-automatica)
-  - [Instalacion paquetes necesarios para Hyprland](#instalacion-paquetes-necesarios-para-hyprland)
-  - [Mi configuracion](#mi-configuracion)
+  - [Atajos de teclado](#atajos-de-telcado)
+    - [Sistema](#sistema)
+    - [Focus](#focus)
+    - [Move](#move)
+    - [Resize](#resize)
   - [Creditos](#creditos)
+- [Mejorar los mirrrorlist](#mejorar-los-mirrorlist)
+- [Instalar Docker](#instalar-docker)
+- [Instalar Virtual Box](#instalar-virtual-box)
+- [KeePass](#keepass)
+- [Compartir pantalla](#compartir-pantalla)
 
 # Enlaces a consultar
 - **[Wine](https://dev.to/yofreormaza/instalar-wine-en-arch-linux-4bok)**
 - **[Gnome-Look](https://www.gnome-look.org/s/Gnome/browse/)**
 - **[Hyprland docs](https://hyprland.org/)**
-- **[Mejorar los mirrors](https://salmorejogeek.com/2016/11/18/usando-reflector-para-descargar-mas-rapido-de-los-mirros-de-arch-antergos/)**
 - **[Nerd Fonts](https://www.nerdfonts.com/cheat-sheet)**
-- **[Instalar Docker](https://linuxhint.com/arch-linux-docker-tutorial/)**
 - **[Problemas con las llaves](https://superlativoblog.wordpress.com/2017/01/06/solucion-al-problema-de-llaves-actualizando-arch-o-derivadas/)**
-- **[Screen Sharing](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)**
-- **[Virtual maquines](https://platzi.com/tutoriales/2383-prework-linux/21080-instalacion-de-virtualbox-en-archlinux/)**
 
 # Arch Linux
 
@@ -115,7 +79,7 @@ Optaremos por utilizar cfdisk debido a su facilidad de uso
 cfdisk
 ```
 Particionamos el disco utilizando cfdisk de la siguiente manera:  
-  - 150 MB - EFI SYSTEM
+  - 300 MB - EFI SYSTEM
   - 15 GB - SWAP
   - Resto del espacio - /  
 Para ver las particiones fuera de cfdisk, podemos utilizar el siguiente comando:  
@@ -207,10 +171,10 @@ systemctl enable NetworkManager
 ### Instalacion del gestor de arranque
 Instalamos GRUB en modo EFI y asigna "Arch" como identificador del cargador de arranque  
 ```bash
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
 ```
 ```bash
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
+grub-install --target=x86_64-efi --efi-directory=/boot --removable
 ```
 Generamos el archivo de configuración de GRUB  
 ```bash
@@ -237,56 +201,134 @@ xdg-user-dirs-update
 # Hyprland
 
 ## Instalacion y config automatica
-Podemos ejecutar el script "install.sh", si deseamos hacer la instalacion de todos los paquetes necesarios de forma automatica y copiar los dotfiles
+Podemos ejecutar el script "install.sh" para instalar automáticamente todos los paquetes necesarios y copiar los archivos de configuración (dotfiles). Para hacerlo, simplemente ejecuta el siguiente comando:  
 ```bash
 ./install.sh
 ```
-Posteriormente a esto haremos un reinicio, si decidimos realizar el script ya habremos terminado
+Una vez completada la ejecución, será necesario reiniciar el sistema para aplicar todos los cambios. Después de esto, la instalación estará finalizada  
 
-## Instalacion de Hyprland
-Para poder instalar hyprland necesitamos yay
-```bash 
-git clone https://aur.archlinux.org/yay.git
-```
-```bash
-cd yay
-```
-```bash
-makepkg -si # si este comando no va necesitaremos instalar base-devel por medio de pacman
-```
-Instalamos Qtile y el logging manager
-```bash
-yay -S hyprland kitty brave-bin
-```
-```bash
-sudo pacman -S sddm
-```
-```bash
-systemctl enable sddm
-```
+## Atajos de telcado
+A continuación se presentan los atajos de teclado configurados en mis dotfiles para facilitar el uso y la navegación. La tecla mod corresponde a la tecla de Windows:  
 
-## Instalacion paquetes necesarios para Hyprland
-Una vez ya este instalado hyprland, ya podremos instalar los paquetes que necesitamos (algunos de estos paquetes no son necesarios)
-```bash
-sudo pacman -S rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher pacman-contrib 
-```
-```bash
-yay -S sddm-theme-sugar-candy-git wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux light transmission-cli burpsuite
-```
+### Sistema
+| Acción                        | Atajo                                   |
+|-------------------------------|-----------------------------------------|
+| **mod + ENTER**               | Abre una terminal (Kitty)               |
+| **mod + E**                   | Abre el explorador de archivos (Nemo)   |
+| **mod + M**                   | Abre el lanzador de aplicaciones (Rofi) |
+| **mod + B**                   | Abre el navegador web (Brave)           |
+| **mod + C**                   | Abre el editor de código (VS Code)      |
+| **mod + S**                   | Realiza una captura de pantalla         |
+| **mod + L**                   | Bloquea el escritorio (Swaylock)        |
+| **mod + W**                   | Cierra la ventana activa                |
+| **mod + F**                   | Convierte una ventana a flotante        |
+| **mod + Space**               | Pone la ventana en pantalla completa    |
 
-## Mi configuracion
-Para mantener la misma configracion del entorno de escritorio
-```bash
-git clone git@github.com:jose-016al/Hyprland.git
-```
-```bash
-cd Hyprland
-```
-Copiamos el directorio .config
-```bash
-cp -r dotfiles ~/
-```
+### Focus
+| Acción                        | Atajo                        |
+|-------------------------------|------------------------------|
+| **mod + H**                   | Mueve el foco a la izquierda |
+| **mod + L**                   | Mueve el foco a la derecha   |
+| **mod + K**                   | Mueve el foco a la arriba    |
+| **mod + J**                   | Mueve el foco a la abajo     |
+
+### Move
+| Acción                        | Atajo                           |
+|-------------------------------|---------------------------------|
+| **mod + ALT + H**             | Mueve la ventana a la izquierda |
+| **mod + ALT + L**             | Mueve la ventana a la derecha   |
+| **mod + ALT + K**             | Mueve la ventana a la arriba    |
+| **mod + ALT + J**             | Mueve la ventana a la abajo     |
+
+### Resize
+| Acción                        | Atajo                                             |
+|-------------------------------|---------------------------------------------------|
+| **mod + SHIFT + LEFT**        | Redimensiona la ventana activa hacia la izquierda |
+| **mod + SHIFT + RIGHT**       | Redimensiona la ventana activa hacia la derecha   |
+| **mod + SHIFT + UP**          | Redimensiona la ventana activa hacia arriba       |
+| **mod + SHIFT + DOWN**        | Redimensiona la ventana activa hacia abajo        |
 
 ## Creditos 
 <p>Agradecimientos a @<a href="https://github.com/f3l3p1n0">f3l3p1n0</a> por los dotfiles iniciales. Mi trabajo se basa en sus contribuciones.</p>
 <p><a href="https://github.com/f3l3p1n0/bluehypr">BlueHypr - f3l3p1n0</a></p>
+
+# Mejorar los mirrorlist
+Este proceso optimiza los servidores de espejo (mirrors) utilizados por pacman para mejorar la velocidad y eficiencia de las descargas de paquetes. A continuación, los pasos para actualizar tu lista de servidores:  
+```bash
+sudo pacman -S reflector rsync
+```
+```bash
+sudo reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+# Instalar Docker
+Instalar Docker  
+```bash
+sudo pacman -S docker
+```
+Habilitar el servicio de Docker  
+```bash
+sudo systemctl enable docker.service
+```
+Añadir tu usuario al grupo de Docker  
+```bash
+sudo usermod -aG docker $USER
+```
+Para más información sobre Docker y su uso, puedes consultar mi repositorio de [Dcoker](https://github.com/jose-016al/Docker)
+
+# Instalar Virtual Box
+Instalar VirtualBox  
+```bash
+sudo pacman -S virtualbox
+```
+Instalar los encabezados del núcleo LTS  
+```bash
+sudo pacman -S  linux-lts-headers
+```
+Cargar los módulos de VirtualBox  
+```bash
+sudo modprobe vboxdrv vboxnetadp vboxnetflt vboxpci
+```
+Añadir tu usuario al grupo vboxusers  
+```bash
+sudo gpasswd -a $USER vboxusers
+```
+Instalar las herramientas de invitado de VirtualBox  
+```bash
+sudo pacman -S virtualbox-guest-iso
+```
+
+# KeePass
+- [Keepass RPC](https://github.com/kee-org/keepassrpc/releases/tag/v2.0.2): Permite el autocompletado automático de contraseñas en el navegador  
+- [Kee - Password Manager](https://chromewebstore.google.com/detail/kee-password-manager/mmhlniccooihdimnnjhamobppdhaolme?hl=es&pli=1) Extensión para autocompletado en Google Chrome  
+- [Yet Another Favicon Downloader](https://github.com/navossoc/KeePass-Yet-Another-Favicon-Downloader/releases/tag/v1.2.5.0): Permite descargar íconos para personalizar nuestra base de datos  
+- [KeeTheme](https://github.com/xatupal/KeeTheme/releases/tag/v0.10.7) Añade un nuevo tema oscuro a KeePass para una mejor experiencia visual  
+- [Paquetes de idioma](https://keepass.info/translations.html) Permite agregar tu idioma a KeePass para una experiencia más personalizada  
+
+Instalar KeePass usando Yay  
+```bash
+yay -S keepass
+```
+Descomprimir el archivo del idioma español  
+```bash
+unzip KeePass-2.57-Spanish.zip
+```
+Crear el directorio para los idiomas  
+```bash
+sudo mkdir /usr/share/keepass/Languages 
+```
+Mover el archivo del idioma español al directorio correspondiente  
+```bash
+mv Spanish.lngx /usr/share/keepass/Languages
+```
+Mover los plugins necesarios a la carpeta de plugins de KeePass  
+```bash
+sudo mv KeePassRPC.plgx YetAnotherFaviconDownloader.plgx KeeTheme.dll KeeTheme.plgx /usr/share/keepass/Plugins  
+```
+
+# Compartir pantalla 
+Para habilitar el uso de la función de compartir pantalla en tu entorno, simplemente instala los siguientes paquetes. La configuración necesaria ya está incluida en los dotfiles para que funcione correctamente:  
+```bash
+sudo pacman -S pipewire wireplumber xdg-desktop-portal-hyprland
+```
+Si algo no funciona como se espera o deseas más información, puedes consultar la documentación oficial sobre [Screen Sharing](https://wiki.hyprland.org/Useful-Utilities/Screen-Sharing/)
