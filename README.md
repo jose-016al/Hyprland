@@ -1,6 +1,6 @@
 # ArchLinux & Hyprland
 
-![Hyprland](dotfiles/.screenshots/hyprland.gif)
+![Hyprland](dotfiles/.screenshots/hyprland2.gif)
 
 # Otras opciones de entorno de escritorio
 
