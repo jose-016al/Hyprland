@@ -147,13 +147,26 @@ function copia() {
     echo -e "\e[32mOK\e[0m"
 
     # custom
-    printf "Custom......................"
-    cp -r $1/dotfiles/gtk-3.0/ "$HOME/.config/"
-    cp -r $1/dotfiles/.gtkrc-2.0 "$HOME/"
-    sudo cp -r $1/dotfiles/Custom/Kripton-v40 "/usr/share/themes/"
+    printf "Aplicando temas GTK, iconos y cursor........"
+    sudo cp -r $1/dotfiles/Custom/Catppuccin-Mocha "/usr/share/themes/"
     sudo cp -r $1/dotfiles/Custom/Papirus "/usr/share/icons/"
     sudo cp -r $1/dotfiles/Custom/Breeze "/usr/share/icons/"
     sudo cp -r $1/dotfiles/Custom/rofi "/usr/share/"
+    mkdir -p "$HOME/.config/gtk-3.0"
+    cat > "$HOME/.config/gtk-3.0/settings.ini" <<EOF
+    [Settings]
+    gtk-theme-name = Catppuccin-Mocha
+    gtk-icon-theme-name = Papirus
+    gtk-cursor-theme-name = Breeze
+    gtk-font-name = Noto Sans 10
+    EOF
+
+    cat > "$HOME/.gtkrc-2.0" <<EOF
+    gtk-theme-name="Catppuccin-Mocha"
+    gtk-icon-theme-name="Papirus"
+    gtk-cursor-theme-name="Breeze"
+    gtk-font-name="Noto Sans 10"
+    EOF
     echo -e "\e[32mOK\e[0m"
 }
 
@@ -178,12 +191,12 @@ function requerimientos() {
 function paquetes() {
     # wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop-bin visual-studio-code-bin autofirma configuradorfnmt onedriver xfce4-power-manager gnome-disk-utility evince whatsapp-for-linux sddm-theme-sugar-candy-git
     printf "Instalando paquetes yay......"
-    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt gnome-disk-utility evince sddm-theme-sugar-candy-git ligth > /dev/null 2>&1
+    yay -S --noconfirm hyprland kitty brave-bin wl-clip-persist swaylock-effects xviewer zsh-syntax-highlighting zsh-autosuggestions nwg-look telegram-desktop visual-studio-code-bin autofirma configuradorfnmt gnome-disk-utility evince sddm-theme-sugar-candy-git ligth xautolock megatools > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 
     # sddm rofi waybar unzip pavucontrol pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools
     printf "Instalando paquetes pacman..."
-    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pulseaudio pamixer xautolock hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher megatools pacman-contrib acpi ntp > /dev/null 2>&1
+    sudo pacman -S --noconfirm sddm rofi waybar unzip pavucontrol pulseaudio pamixer hyprpaper nemo cinnamon-translations grim slurp swappy dunst zsh bat lsd neofetch wget udisks2 udiskie ntfs-3g vlc network-manager-applet spotify-launcher pacman-contrib acpi ntp > /dev/null 2>&1
     echo -e "\e[32mOK\e[0m"
 }
 
